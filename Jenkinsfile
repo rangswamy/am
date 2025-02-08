@@ -1,10 +1,7 @@
 
 pipeline {
 agent any
-    environment {
-        echo "build number is: ${env.BUILD_NUMBER}"
-    }
-        stages {
+    stages {
     stage('checkout code') {
     steps {
         git credentialsId: '7cb25d81-e8a6-4cb8-a1fd-4b20344cd684', url: 'https://github.com/rangswamy/am.git'
@@ -21,7 +18,7 @@ agent any
 
         Regards
         ABC
-        9986803453''', cc: '', from: '', replyTo: '', subject: "Build is over....${env.BUILD_NUMBER}", to: 'tech.tkr88@gmail.com'
+        9986803453''', cc: '', from: '', replyTo: '', subject: 'Build is over....', to: 'tech.tkr88@gmail.com'
     }
 }
     }
