@@ -12,12 +12,5 @@ agent any
         sh "mvn clean package"
     }
     }
-        stage('Test PR') {
-            when {
-                expression {
-                    return env.BRANCH_NAME ==~ /PR-\d+/
-                }
-            }
-    }
     }
 }
