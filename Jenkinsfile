@@ -1,6 +1,4 @@
-dhh
-gk
-fgfg m
+
 pipeline {
 agent any
     stages {
@@ -13,6 +11,13 @@ agent any
     steps {
         sh "mvn clean package"
     }
+    }
+        stage('Test PR') {
+            when {
+                expression {
+                    return env.BRANCH_NAME ==~ /PR-\d+/
+                }
+            }
     }
     }
 }
