@@ -1,5 +1,3 @@
-]dh
-rthyrm
 pipeline {
 agent any
     stages {
