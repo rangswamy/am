@@ -12,14 +12,10 @@ agent any
         sh "mvn clean package"
     }
     }
-    stage('Email') {
-    steps {
-        mail bcc: '', body: '''Build is over...
-
-        Regards
-        ABC
-        9986803453''', cc: '', from: '', replyTo: '', subject: 'Build is over....', to: 'tech.tkr88@gmail.com'
     }
-}
+    post {
+        always {
+            mail bcc: '', body: '"<br> project: ${env.JOB_NAME} <br> buildnumber: ${env.BUILD_NUMBER} <br> url: ${env.BUILD_URL}"', cc: '', from: '', replyTo: '', subject: '$(currentBuild.result)', to: 'rswami90@gmail.com'
+        }
     }
 }
