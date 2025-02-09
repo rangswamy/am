@@ -15,7 +15,7 @@ agent any
     }
     post {
         always {
-            mail bcc: '', body: '"<br> project: ${env.JOB_NAME} <br> buildnumber: ${env.BUILD_NUMBER} <br> url: ${env.BUILD_URL}"', cc: '', from: '', replyTo: '', subject: '$(currentBuild.result)', to: 'rswami90@gmail.com'
+            mail bcc: '', body: """'project: ${env.JOB_NAME}<br/> Build Number: ${env.BUILD_NUMBER}<br/> url: ${env.BUILD_URL}'""", cc: '', from: '', replyTo: '', subject: "'$(currentBuild.result)'", to: 'rswami90@gmail.com'
         }
     }
 }
