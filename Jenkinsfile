@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Project') {
             steps {
-                git branch:'master',url:'https://github.com/gurramnaresh26/AmazonNaresh' 
+                git branch:'master',url:'https://github.com/gurramnaresh26/am' 
             }
         }
         stage('Clean project') {
